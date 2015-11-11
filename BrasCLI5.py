@@ -73,16 +73,15 @@ yd=yo+marge
 #coordonees de C
 bd=sqrt((xd**2)+(yd**2))
 
-print("TEST########" + str(bd/(taillesegment*2)))
 
 solb=atan(yd/xd)
 triangleb=acos(bd/(taillesegment*2))
 ab=(solb)+(triangleb)
 
 print("L'angle pour le moteur B est : "+str(ab))
-ac=180*((2*pi)/360)-2*(acos((bd/2)/taillesegment))
+ac=180*((2*pi)/float(360))-2*(acos((bd/2)/taillesegment))
 
-print("L'angle pour le moteur C est : "+str(ac))
+print("L'angle pour le moteur C est (A VERIFIER) : "+str(ac))
 xc=taillesegment*cos(ab)
 yc=taillesegment*sin(ab)
 
@@ -91,9 +90,9 @@ yc=taillesegment*sin(ab)
 
 df=sqrt(((abs(xf-xd))**2)+((abs(yd-yf))**2))
 
-triangled=acos(df/(2*taillesegment))
-sold=asin((xf-xd)/taillesegment)
-ad=(triangled+solb)-90*((2*pi)/360)
+triangled=acos(df/float((2*taillesegment)))
+sold=asin((xf-xd)/float(df))
+ad=(triangled+solb)-90*((2*pi)/float(360))
 
 print("L'angle pour le moteur D est : "+str(ad))
 
@@ -114,10 +113,10 @@ print("ye : "+str(ye))
 print("xf : "+str(xf))
 print("yf : "+str(yf))
 print("Verification")
-print("bc : "+str(sqrt(((xc-xb)**2)+((yc-yb)**2))))
-print("cd : "+str(sqrt(((xd-xc)**2)+((yd-yc)**2))))
-print("de : "+str(sqrt(((xe-xd)**2)+((ye-yd)**2))))
-print("ef : "+str(sqrt(((xf-xe)**2)+((yf-ye)**2))))
+print("bc : "+str(sqrt(abs((xc-xb)**2)+abs((yc-yb)**2))))
+print("cd : "+str(sqrt(abs((xd-xc)**2)+abs((yd-yc)**2))))
+print("de : "+str(sqrt(abs((xe-xd)**2)+abs((ye-yd)**2))))
+print("ef : "+str(sqrt(abs((xf-xe)**2)+abs((yf-ye)**2))))
 
 # Partie GUI
 
