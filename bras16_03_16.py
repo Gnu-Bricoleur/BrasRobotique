@@ -97,6 +97,9 @@ while continuer:
 			serial_port.write(str(rot3).encode('ascii'))
 			serial_port.write(str(rot2).encode('ascii'))
 			serial_port.write(str(rot).encode('ascii'))
+		elif chaine == "ultrason\r\n":
+			distance = serial_port.readline()
+			distance = distance.decode('ascii')
 		elif chaine == "base\r\n":
 			serial_port.write(str(base4).encode('ascii'))
 			serial_port.write(str(base3).encode('ascii'))
