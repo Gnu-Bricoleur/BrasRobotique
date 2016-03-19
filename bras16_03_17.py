@@ -338,6 +338,7 @@ while continuer:
 		elif chaine == "ultrason\r\n":
 			distance = serial_port.readline()
 			distance = distance.decode('ascii')
+			print distance
 		elif chaine == "base\r\n":
 			serial_port.write(str(base4).encode('ascii'))
 			serial_port.write(str(base3).encode('ascii'))
@@ -468,6 +469,7 @@ while continuer:
 		elif chaine == "ultrason\r\n":
 			distance = serial_port.readline()
 			distance = distance.decode('ascii')
+			print distance
 		elif chaine == "base\r\n":
 			serial_port.write(str(base4).encode('ascii'))
 			serial_port.write(str(base3).encode('ascii'))
