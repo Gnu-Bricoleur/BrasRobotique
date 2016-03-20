@@ -492,3 +492,4 @@ while continuer:
 			serial_port.write(str(seg3).encode('ascii'))
 			continuer1 = False
 
+
